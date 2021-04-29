@@ -37,4 +37,14 @@ router.post('/', (req, res) => {
     })
 })
 
+// GET specific recipe details
+router.get('/:id', (req, res) => {
+    Recipe.findById(req.params.id)
+    .then( foundRecipe => {
+        return res.json({foundRecipe})
+    })
+    .catch( err => {
+        throw err.message
+    })
+})
 module.exports = router;
