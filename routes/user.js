@@ -35,11 +35,25 @@ router.post('/', (req, res) => {
     })
 })
 
-// Get specific user
+// Get specific user details
 router.get('/:id', (req, res) => {
     User.findOne({_id: req.params.id})
     .then( foundUser => {
         return res.json({foundUser})
+    })
+    .catch( err => {
+        throw err.message
+    })
+})
+
+// Update existing user
+router.put('/:id', (req, res) => {
+    User.findByIdAndUpdate(req.params.id, req.body)
+    .then( foundUser => {
+        return User.findOne({username: req.body.username})
+    })
+    .then( (updatedUser) => {
+        return res.json({updatedUser})
     })
     .catch( err => {
         throw err.message
