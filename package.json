@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/numel007/recipe-api/issues"
   },
-  "homepage": "https://github.com/numel007/recipe-api#readme"
+  "homepage": "https://github.com/numel007/recipe-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.6"
+  }
 }
