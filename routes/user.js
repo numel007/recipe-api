@@ -12,3 +12,25 @@ router.get('/', (req, res) => {
         throw err.message
     })
 })
+
+// POST new user
+router.post('/', (req, res) => {
+    let newUser = new User(req.body)
+
+    newUser.save()
+    .then( () => {
+        User.findOne({username: newUser.username})
+        .then( user => {
+            return res.json({
+                'username': user.username,
+                'message': 'User was created.'
+            })
+        })
+        .catch( err => {
+            throw err.message
+        })
+    })
+    .catch( err => {
+        throw err.message
+    })
+})
