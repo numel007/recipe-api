@@ -5,6 +5,7 @@ const User = require('../models/user')
 
 // Get all users
 router.get('/', (req, res) => {
+    console.log('Returning all users.')
     User.find().then( allUsers => {
         return res.json({allUsers})
     })
@@ -15,6 +16,7 @@ router.get('/', (req, res) => {
 
 // POST new user
 router.post('/', (req, res) => {
+    console.log('Creating new user.')
     let newUser = new User(req.body)
 
     newUser.save()
@@ -59,3 +61,5 @@ router.put('/:id', (req, res) => {
         throw err.message
     })
 })
+
+module.exports = router;

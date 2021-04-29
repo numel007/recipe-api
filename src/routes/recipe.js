@@ -18,5 +18,6 @@ router.post('/', (req, res) => {
     let newRecipe = new Recipe(req.body);
 
     newRecipe.save()
-    .then()
 })
+
+module.exports = router;

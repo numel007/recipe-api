@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const UserSchema = new Schema({
     username: {type: String, required: true},
     password: {type: String, required: true, select: false},
-    recipes: [{type: Schema.Types.ObjectId, ref:'Recipes'}] // 'Recipes' points at connected Recipes model
+    recipes: [{type: Schema.Types.ObjectId, ref:'Recipe'}] // 'Recipes' points at connected Recipes model
 })
 
 // Populate recipes list when findOne is called
@@ -13,6 +13,4 @@ UserSchema.pre('findOne', function(next) {
     next()
 })
 
-const User = mongoose.model('User', UserSchema)
-
-module.exports = User
+module.exports = mongoose.model('User', UserSchema);

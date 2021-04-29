@@ -8,6 +8,4 @@ const RecipeSchema = new Schema({
     author: {type: Schema.Types.ObjectId, ref: 'User', required: true} // 'User' points at connected User model
 })
 
-const Recipe = mongoose.model('Recipe', RecipeSchema)
-
-module.exports = Recipe
+module.exports = mongoose.model('Recipe', RecipeSchema);

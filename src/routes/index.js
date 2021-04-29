@@ -4,7 +4,7 @@ const userRoutes = require('./user.js')
 
 const router = express.Router()
 
-router.use('./recipe', recipeRoutes)
-router.use('./user', userRoutes)
+router.use('/recipes', recipeRoutes)
+router.use('/users', userRoutes)
 
 module.exports = router
