@@ -5,12 +5,6 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
-app.use((req, res, next) => {
-    const now = new Date().toString()
-    console.log(`Requested ${req.url} at ${now}`)
-    next()
-})
-
 // Set up database
 require('./config/db-setup.js')
 

@@ -5,7 +5,6 @@ const User = require('../models/user')
 
 // Get all users
 router.get('/', (req, res) => {
-    console.log('Returning all users.')
     User.find().then( allUsers => {
         return res.json({allUsers})
     })
@@ -16,7 +15,6 @@ router.get('/', (req, res) => {
 
 // POST new user
 router.post('/', (req, res) => {
-    console.log('Creating new user.')
     let newUser = new User(req.body)
 
     newUser.save()
@@ -56,6 +54,23 @@ router.put('/:id', (req, res) => {
     })
     .then( (updatedUser) => {
         return res.json({updatedUser})
+    })
+    .catch( err => {
+        throw err.message
+    })
+})
+
+// Delete existing user
+router.delete('/:id', (req, res) => {
+    User.findByIdAndDelete(req.params.id)
+    .then( result => {
+        if (result === null) {
+            return res.json({'message': 'ID matched no user.'})
+        } else {
+            return res.json({
+                'message': 'User deleted.'
+            })
+        }
     })
     .catch( err => {
         throw err.message
