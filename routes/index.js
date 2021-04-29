@@ -5,7 +5,7 @@ const recipeRoutes = require('./recipe.js')
 const router = express.Router()
 
 // Set default recipe routes to /recipes
-router.use('./recipes', recipeRoutes)
+router.use('./recipe', recipeRoutes)
 // router.use('./user', userRoutes)
 
 module.exports = router
