@@ -34,3 +34,14 @@ router.post('/', (req, res) => {
         throw err.message
     })
 })
+
+// Get specific user
+router.get('/:id', (req, res) => {
+    User.findOne({_id: req.params.id})
+    .then( foundUser => {
+        return res.json({foundUser})
+    })
+    .catch( err => {
+        throw err.message
+    })
+})
