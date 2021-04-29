@@ -1,0 +1,23 @@
+{
+  "name": "recipe-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numel007/recipe-api.git"
+  },
+  "author": "Jackie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/numel007/recipe-api/issues"
+  },
+  "homepage": "https://github.com/numel007/recipe-api#readme"
+}
