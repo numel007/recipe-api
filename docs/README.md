@@ -8,22 +8,22 @@
 
 ## Usage
 
-1. Navigate to /recipes to see all recipes
-1. Navigate to /recipes/new
+1. Navigate to /recipe to see all recipes
+1. Navigate to /recipe/new
 1. Fill out the boxes with the recipe's name, ingredients, and instructions.
 1. Click submit
 
 ## Endpoints
 
-GET `http://site.com/recipes` - Returns all stored recipe titles<br>
-POST `http://site.com/recipes` - Submits form with recipe details to the database<br>
-GET `http://site.com/recipes/<id>` - Returns specific recipe's details<br>
-DELETE `http://site.com/recipes/<id>` - Delete specific recipe<br>
-PUT `http://site.com/recipes/<id>` - Update specific recipe<br>
+GET `http://site.com/recipe` - Returns all stored recipe titles<br>
+POST `http://site.com/recipe` - Submits form with recipe details to the database<br>
+GET `http://site.com/recipe/<id>` - Returns specific recipe's details<br>
+DELETE `http://site.com/recipe/<id>` - Delete specific recipe<br>
+PUT `http://site.com/recipe/<id>` - Update specific recipe<br>
 
 ## Examples
 
-GET `http://site.com/recipes`
+GET `http://site.com/recipe`
 
 ```javascript
 {
@@ -36,7 +36,7 @@ GET `http://site.com/recipes`
 }
 ```
 
-GET `http://site.com/recipes/<id>`
+GET `http://site.com/recipe/<id>`
 
 ```javascript
 {
