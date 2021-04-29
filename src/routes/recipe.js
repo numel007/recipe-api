@@ -75,4 +75,19 @@ router.put("/:id", (req, res) => {
         });
     });
 });
+
+// Delete existing recipe
+router.delete("/:id", (req, res) => {
+  Recipe.findByIdAndDelete(req.params.id)
+    .then((result) => {
+      if (result === null) {
+        return res.json({ message: "ID matched no recipe" });
+      } else {
+        return res.json({ message: "Recipe deleted." });
+      }
+    })
+    .catch((err) => {
+      throw err.message;
+    });
+});
 module.exports = router;
