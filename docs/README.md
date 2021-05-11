@@ -1,6 +1,6 @@
 # Recipe Database
 
-[Click to visit the site.](https://www.google.com/)
+[Click to visit the site.](https://bew-recipe-api.herokuapp.com/)
 
 `Recipe Database` (RD) stores and displays user-entered recipes.
 <br>
@@ -8,27 +8,28 @@
 
 ## Usage
 
-1. Post to `/user` to create and get your user ID
-1. Request `/recipe` to see all recipes
-1. Post to `/recipe` to add a recipe associated with your user ID
+1. Post to `/users` to create an account
+1. Get `/users` to find account \_id
+1. Request `/recipes` to see all recipes
+1. Post to `/recipes` to add a recipe associated with your user \_id
 
 ## Endpoints
 
-GET `http://site.com/user` - Returns all users in the database (excludes associated passwords)<br>
-POST `http://site.com/user` - Create a new user<br>
-GET `http://site.com/user/<id>` - Returns specific user's account details (excluding password)<br>
-DELETE `http://site.com/user/<id>` - Delete a specific user<br>
-PUT `http://site.com/user/<id>` - Updates a specific user's account details<br>
+GET `https://bew-recipe-api.herokuapp.com/users` - Returns all users in the database (excludes associated passwords)<br>
+POST `https://bew-recipe-api.herokuapp.com/users` - Create a new user<br>
+GET `https://bew-recipe-api.herokuapp.com/users/<id>` - Returns specific user's account details (excluding password)<br>
+DELETE `https://bew-recipe-api.herokuapp.com/users/<id>` - Delete a specific user<br>
+PUT `https://bew-recipe-api.herokuapp.com/users/<id>` - Updates a specific user's account details<br>
 
-GET `http://site.com/recipe` - Returns all stored recipe titles<br>
-POST `http://site.com/recipe` - Submits form with recipe details to the database<br>
-GET `http://site.com/recipe/<id>` - Returns specific recipe's details<br>
-DELETE `http://site.com/recipe/<id>` - Delete a specific recipe<br>
-PUT `http://site.com/recipe/<id>` - Update a specific recipe<br>
+GET `https://bew-recipe-api.herokuapp.com/recipes` - Returns all stored recipe titles<br>
+POST `https://bew-recipe-api.herokuapp.com/recipes` - Submits form with recipe details to the database<br>
+GET `https://bew-recipe-api.herokuapp.com/recipes/<id>` - Returns specific recipe's details<br>
+DELETE `https://bew-recipe-api.herokuapp.com/recipes/<id>` - Delete a specific recipe<br>
+PUT `https://bew-recipe-api.herokuapp.com/recipes/<id>` - Update a specific recipe<br>
 
 ## Examples
 
-GET `http://site.com/recipe`
+GET `https://bew-recipe-api.herokuapp.com/recipe`
 
 ```javascript
 {
@@ -39,7 +40,6 @@ GET `http://site.com/recipe`
             "ingredients": "ingredient 1, ingredient 2",
             "method": "step 1, step 2",
             "author": "608a2f603e53ef93f3845970",
-            "__v": 0
         },
         {
             "_id": "608a3487ed9a17972dc98e4f",
@@ -47,7 +47,6 @@ GET `http://site.com/recipe`
             "ingredients": "ingredient 1, ingredient 2",
             "method": "step 1, step 2",
             "author": "608a30703cb2b09453f7d8c3",
-            "__v": 0
         },
         ...
     ]
@@ -63,7 +62,7 @@ GET `http://site.com/recipe/<id>`
     'method': ['Open the can', 'Eat what\'s inside the can.'],
     'author': {
         'username': 'user1',
-        'recipes': ['Chili de Jackie', '']
+        'recipes': ['Chili de Jackie']
     }
 }
 ```
