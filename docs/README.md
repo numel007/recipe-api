@@ -1,6 +1,7 @@
 # Recipe Database
 
-[Click to visit the site.](https://bew-recipe-api.herokuapp.com/)
+[Click to visit the API.](https://bew-recipe-api.herokuapp.com/)<br>
+[Click to visit the docsified version of this README.](https://numel007.github.io/recipe-api/#/)
 
 `Recipe Database` (RD) stores and displays user-entered recipes.
 <br>
